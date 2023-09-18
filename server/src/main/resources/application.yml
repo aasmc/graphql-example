@@ -1,1 +1,24 @@
+spring:
+  application:
+    name: graphql-server
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    hikari:
+      connection-timeout: 2000
+      initialization-fail-timeout: 0
+  graphql:
+    graphiql:
+      enabled: true
+    path: /graphql
 
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: 9090
