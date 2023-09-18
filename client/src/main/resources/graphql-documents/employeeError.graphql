@@ -1,0 +1,6 @@
+query employeeError($id: ID!) {
+    employeeError(id: $id) {
+        firstName
+        lastName
+    }
+}

@@ -1,0 +1,9 @@
+query allEmployees {
+    employees {
+        firstName
+        lastName
+        salary
+        position
+        age
+    }
+}

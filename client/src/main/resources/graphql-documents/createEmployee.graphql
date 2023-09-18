@@ -1,0 +1,9 @@
+mutation createEmployee($dto: EmployeeInput!) {
+    newEmployee(employee: $dto) {
+        firstName
+        lastName
+        salary
+        age
+        position
+    }
+}
