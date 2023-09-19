@@ -17,18 +17,7 @@ public class ExceptionResolver extends DataFetcherExceptionResolverAdapter {
         if (ex instanceof GraphQLServerError) {
             GraphQLServerError err = (GraphQLServerError) ex;
             int code = err.getCode();
-            ErrorType errorType;
-            switch (code) {
-                case 404:
-                    errorType = ErrorType.NOT_FOUND;
-                    break;
-                case 400:
-                    errorType = ErrorType.BAD_REQUEST;
-                    break;
-                default:
-                    errorType = ErrorType.INTERNAL_ERROR;
-                    break;
-            }
+            ErrorType errorType = errorType(code);
             return GraphqlErrorBuilder.newError()
                     .errorType(errorType)
                     .message(err.getMessage())
@@ -37,5 +26,14 @@ public class ExceptionResolver extends DataFetcherExceptionResolverAdapter {
                     .build();
         }
         return null;
+    }
+
+
+    private ErrorType errorType(int code) {
+        return switch (code) {
+            case 404 -> ErrorType.NOT_FOUND;
+            case 400 -> ErrorType.BAD_REQUEST;
+            default -> ErrorType.INTERNAL_ERROR;
+        };
     }
 }
