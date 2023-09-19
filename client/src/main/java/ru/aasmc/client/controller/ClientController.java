@@ -39,7 +39,7 @@ public class ClientController {
     public Employee getEmployeeError(@PathVariable("id") Integer id) {
         Mono<Employee> entity = client.documentName("employeeError")
                 .variable("id", id)
-                .retrieve("employee")
+                .retrieve("employeeError")
                 .toEntity(Employee.class);
         return entity.block();
     }
@@ -50,5 +50,4 @@ public class ClientController {
                 .retrieve("employees")
                 .toEntityList(Employee.class).block();
     }
-
 }

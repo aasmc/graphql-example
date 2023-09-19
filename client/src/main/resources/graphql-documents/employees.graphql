@@ -5,5 +5,9 @@ query allEmployees {
         salary
         position
         age
+        passport {
+            code
+            number
+        }
     }
 }

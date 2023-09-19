@@ -15,4 +15,5 @@ public class Employee {
     private String position;
     private int salary;
     private int age;
+    private Passport passport;
 }

@@ -1,7 +1,7 @@
 type Query {
     employees: [Employee]
     employee(id: ID!): Employee!
-    employeeError(id: ID!): Employee
+    employeeError(id: ID!): Employee!
 }
 
 type Mutation {
@@ -23,4 +23,10 @@ type Employee {
     position: String!
     salary: Int
     age: Int
+    passport: Passport!
+}
+
+type Passport {
+    code: Int!
+    number: Int!
 }

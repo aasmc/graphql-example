@@ -1,0 +1,5 @@
+GET http://localhost:8080/error/100
+
+###
+
+GET http://localhost:8080/10000

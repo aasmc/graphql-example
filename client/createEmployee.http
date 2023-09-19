@@ -9,3 +9,13 @@ Accept: application/json
   "salary": 1000,
   "age": 36
 }
+
+###
+POST localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "Alex",
+  "lastName": "Alex"
+}

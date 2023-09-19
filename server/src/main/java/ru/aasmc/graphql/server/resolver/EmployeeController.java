@@ -44,6 +44,7 @@ public class EmployeeController {
                 .age(employee.getAge())
                 .salary(employee.getSalary())
                 .position(employee.getPosition())
+                .passport(employee.getPassport() == null ? employee.getDefaultPassport() : employee.getPassport())
                 .build();
         return repository.save(toSave);
     }
